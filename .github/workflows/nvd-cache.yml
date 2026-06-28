@@ -36,8 +36,14 @@ jobs:
 
       - name: Compress H2 Database
         run: |
-          cd ~/.m2/repository/org/owasp/dependency-check-data
-          zip odc.mv.db.zip odc.mv.db
+          # Find the H2 database file (e.g., in a version-specific subdirectory like 11.0/)
+          DB_FILE=$(find ~/.m2/repository/org/owasp/dependency-check-data -name "odc.mv.db" | head -n 1)
+          if [ -z "$DB_FILE" ]; then
+            echo "Error: odc.mv.db not found!"
+            exit 1
+          fi
+          echo "Found database file at: $DB_FILE"
+          zip -j ~/.m2/repository/org/owasp/dependency-check-data/odc.mv.db.zip "$DB_FILE"
 
       - name: Create or Update GitHub Release
         env:
