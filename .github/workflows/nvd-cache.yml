@@ -21,17 +21,25 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
 
+      - name: Restore Previous NVD Cache Release
+        run: |
+          mkdir -p ~/.m2/repository/org/owasp/dependency-check-data/11.0
+          if curl -fsSL -o /tmp/odc.mv.db.zip https://github.com/jsoehner/nvd-cache/releases/download/latest-nvd-data/odc.mv.db.zip; then
+            unzip -q -o /tmp/odc.mv.db.zip -d ~/.m2/repository/org/owasp/dependency-check-data/11.0/
+            rm -f /tmp/odc.mv.db.zip
+          fi
+
       - name: Update NVD Database
         env:
           NVD_API_KEY: ${{ secrets.NVD_API_KEY }}
         run: |
-          # Use the latest major version (12.1.0) of dependency-check-maven directly
+          # Use the latest major version (13.0.0) of dependency-check-maven directly
           if [ -z "$NVD_API_KEY" ]; then
-            echo "NVD_API_KEY not found. Updating without key..."
-            mvn org.owasp:dependency-check-maven:12.1.0:update-only
+            echo "NVD_API_KEY not found. Retaining existing pre-cached database if available..."
+            mvn org.owasp:dependency-check-maven:13.0.0:update-only -DassemblyAnalyzerEnabled=false -DossindexAnalyzerEnabled=false || true
           else
             echo "Updating NVD database using API key..."
-            mvn org.owasp:dependency-check-maven:12.1.0:update-only -DnvdApiKey=$NVD_API_KEY
+            mvn org.owasp:dependency-check-maven:13.0.0:update-only -DnvdApiKey=$NVD_API_KEY -DassemblyAnalyzerEnabled=false -DossindexAnalyzerEnabled=false
           fi
 
       - name: Compress H2 Database
@@ -42,8 +50,12 @@ jobs:
             echo "Error: odc.mv.db not found!"
             exit 1
           fi
-          echo "Found database file at: $DB_FILE"
-          zip -j ~/.m2/repository/org/owasp/dependency-check-data/odc.mv.db.zip "$DB_FILE"
+          DB_DIR=$(dirname "$DB_FILE")
+          echo "Found database directory at: $DB_DIR"
+          zip -j ~/.m2/repository/org/owasp/dependency-check-data/odc.mv.db.zip \
+            "$DB_DIR"/odc.mv.db \
+            "$DB_DIR"/publishedSuppressions.xml* \
+            "$DB_DIR"/jsrepository.json* || zip -j ~/.m2/repository/org/owasp/dependency-check-data/odc.mv.db.zip "$DB_FILE"
 
       - name: Create or Update GitHub Release
         env:
