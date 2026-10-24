@@ -49,7 +49,7 @@
 | `aquasecurity/trivy-action` | master | `pkg:github/aquasecurity/trivy-action@master` | 🟡 Unassimilated (No upstream CBOM) |
 | `cbomkit/cbomkit-action` | v2.3.0 | `pkg:github/cbomkit/cbomkit-action@v2.3.0` | 🟡 Unassimilated (No upstream CBOM) |
 | `docker/build-push-action` | v7 | `pkg:github/docker/build-push-action@v7` | 🟡 Unassimilated (No upstream CBOM) |
-| `docker/setup-buildx-action` | v3 | `pkg:github/docker/setup-buildx-action@v3` | 🟡 Unassimilated (No upstream CBOM) |
+| `docker/setup-buildx-action` | v4 | `pkg:github/docker/setup-buildx-action@v4` | 🟡 Unassimilated (No upstream CBOM) |
 | `gitleaks/gitleaks-action` | v3 | `pkg:github/gitleaks/gitleaks-action@v3` | 🟡 Unassimilated (No upstream CBOM) |
 | `semgrep/semgrep-action` | v1 | `pkg:github/semgrep/semgrep-action@v1` | 🟡 Unassimilated (No upstream CBOM) |
 | `/home/runner/work/nvd-cache/nvd-cache/.github/workflows/nvd-cache.yml` | N/A | `N/A` | 🟡 Unassimilated (No upstream CBOM) |
