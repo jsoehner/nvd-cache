@@ -45,7 +45,7 @@
 | `actions/setup-java` | v6 | `pkg:github/actions/setup-java@v6` | 🟡 Unassimilated (No upstream CBOM) |
 | `actions/setup-python` | v5.6.0 | `pkg:github/actions/setup-python@v5.6.0` | 🟡 Unassimilated (No upstream CBOM) |
 | `actions/upload-artifact` | v4.6.2 | `pkg:github/actions/upload-artifact@v4.6.2` | 🟡 Unassimilated (No upstream CBOM) |
-| `anchore/sbom-action` | v0.24.2 | `pkg:github/anchore/sbom-action@v0.24.2` | 🟡 Unassimilated (No upstream CBOM) |
+| `anchore/sbom-action` | v0.24.3 | `pkg:github/anchore/sbom-action@v0.24.3` | 🟡 Unassimilated (No upstream CBOM) |
 | `aquasecurity/trivy-action` | master | `pkg:github/aquasecurity/trivy-action@master` | 🟡 Unassimilated (No upstream CBOM) |
 | `cbomkit/cbomkit-action` | v2.3.0 | `pkg:github/cbomkit/cbomkit-action@v2.3.0` | 🟡 Unassimilated (No upstream CBOM) |
 | `docker/build-push-action` | v7 | `pkg:github/docker/build-push-action@v7` | 🟡 Unassimilated (No upstream CBOM) |
