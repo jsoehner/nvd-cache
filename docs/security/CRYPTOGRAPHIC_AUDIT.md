@@ -43,7 +43,7 @@
 | `actions/checkout` | v7 | `pkg:github/actions/checkout@v7` | 🟡 Unassimilated (No upstream CBOM) |
 | `actions/checkout` | v7.0.1 | `pkg:github/actions/checkout@v7.0.1` | 🟡 Unassimilated (No upstream CBOM) |
 | `actions/setup-java` | v6 | `pkg:github/actions/setup-java@v6` | 🟡 Unassimilated (No upstream CBOM) |
-| `actions/setup-python` | v5.6.0 | `pkg:github/actions/setup-python@v5.6.0` | 🟡 Unassimilated (No upstream CBOM) |
+| `actions/setup-python` | v7.1.0 | `pkg:github/actions/setup-python@v7.1.0` | 🟡 Unassimilated (No upstream CBOM) |
 | `actions/upload-artifact` | v4.6.2 | `pkg:github/actions/upload-artifact@v4.6.2` | 🟡 Unassimilated (No upstream CBOM) |
 | `anchore/sbom-action` | v0.24.3 | `pkg:github/anchore/sbom-action@v0.24.3` | 🟡 Unassimilated (No upstream CBOM) |
 | `aquasecurity/trivy-action` | master | `pkg:github/aquasecurity/trivy-action@master` | 🟡 Unassimilated (No upstream CBOM) |
