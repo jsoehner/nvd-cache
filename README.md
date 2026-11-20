@@ -3,6 +3,7 @@
 [![NVD Cache Update](https://github.com/jsoehner/nvd-cache/actions/workflows/nvd-cache.yml/badge.svg)](https://github.com/jsoehner/nvd-cache/actions/workflows/nvd-cache.yml)
 [![SBOM & CBOM](https://github.com/jsoehner/nvd-cache/actions/workflows/sbom-cbom.yml/badge.svg)](https://github.com/jsoehner/nvd-cache/actions/workflows/sbom-cbom.yml)
 [![Security Testing](https://github.com/jsoehner/nvd-cache/actions/workflows/security-testing.yml/badge.svg)](https://github.com/jsoehner/nvd-cache/actions/workflows/security-testing.yml)
+[![Build Verification](https://img.shields.io/badge/build%20verification-2026--11--20%20passed-brightgreen)](docs/BUILD_VERIFICATION.md)
 
 Automated caching and distribution service for the National Vulnerability Database (NVD) H2 database used by OWASP Dependency-Check.
 
